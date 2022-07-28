@@ -4,16 +4,7 @@ class RegistrationsController < ApplicationController
     end
 
     # def create
-    #     @user = User.new(user_params)
-    #     if @user.save 
-    #         redirect_to root_path, notice: "Success"
-    #     else 
-    #         flash[:alert] = "Something went wrong"
-    #         render :new
-    #     end
+    #  render plain: "test"
     # end
 
-    # def user_params
-    #     params.require(:user).permit(:email, :password, :password_confirmation)
-    # end
 end

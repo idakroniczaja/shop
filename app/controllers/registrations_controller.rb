@@ -3,8 +3,18 @@ class RegistrationsController < ApplicationController
         @user = User.new
     end
 
-    # def create
-    #  render plain: "test"
-    # end
+    def create
+        @user = User.new(user_params)
+        if @user.save 
+            redirect_to root_path, notice: "Success"
+        else
+            flash[:alert] = "Error"
+            render :new, status: :unprocessable_entity
+        end
+    end
+
+    def user_params
+        params.require(:user).permit(:email, :password, :password_confirmation)
+    end
 
 end

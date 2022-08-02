@@ -5,7 +5,8 @@ class RegistrationsController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save 
+        if @user.save
+            session[:user_id] = @user.id
             redirect_to root_path, notice: "Success"
         else
             flash[:alert] = "Error"

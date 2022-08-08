@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_path, notice: 'Logged in successfully'
         else 
-            flash[:error_notification] = "Error"
-            render :new, status: :unprocessable_entity
+            redirect_to sign_up_path, alert: 'We couldnt find your account, please sign up.'
         end
     end
 

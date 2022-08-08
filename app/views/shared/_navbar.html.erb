@@ -1,0 +1,35 @@
+<nav>
+    <div>
+        <%= link_to 'Navbar', root_path%>
+        <div>
+         <ul>
+            <li>
+                <%= link_to 'Home', root_path%>
+            </li>
+            <li>
+                <%= link_to 'About', about_path%>
+            </li>
+         </ul>
+
+         <ul>
+            <% if Current.user %>
+                <span>Logged in as: <%= Current.user.email %></span>
+                <li>
+                    <%= button_to 'Loggout', logout_path, method: :delete %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to 'Sign in', sign_in_path %>
+                </li>
+                <li>
+                    <%= link_to 'Sign up', sign_up_path %>
+                </li>
+            <% end %>
+         </ul>
+
+
+
+
+        </div>
+    </div>
+</nav>

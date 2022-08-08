@@ -7,9 +7,9 @@ class RegistrationsController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to root_path, notice: "Success"
+            redirect_to root_path, notice: "You have successfully created an account!"
         else
-            flash[:alert] = "Error"
+            flash.now[:alert] = "An error has occured. Please, try again."
             render :new, status: :unprocessable_entity
         end
     end

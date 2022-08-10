@@ -13,7 +13,7 @@
 
          <ul>
             <% if Current.user %>
-                <span>Logged in as: <%= Current.user.email %></span>
+                <%= link_to Current.user.email, edit_password_path %>
                 <li>
                     <%= button_to 'Loggout', logout_path, method: :delete %>
                 </li>

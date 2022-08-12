@@ -1,0 +1,14 @@
+<h1>FORTOT PASSWORD?</h1>
+
+<%= form_with url: password_reset_path, local: true do |form| %>
+    
+    <div>
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: 'example@gmail.com' %>
+    </div> 
+    
+    <div>
+        <%= form.submit 'Reset password' %>
+    </div>
+
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Twitter accounts</h1>
+
+<%= link_to 'Connect a Twitter account', '/auth/twitter', method: :post %>
+<%= @twitter_accounts %>
+
+<% @twitter_accounts.each do |twitter_account| %>
+<div>
+    <%= twitter_account.name %>
+</div>
+<% end %>

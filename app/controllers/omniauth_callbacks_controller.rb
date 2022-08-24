@@ -1,8 +1,6 @@
 class OmniauthCallbacksController < ApplicationController
-    OmniAuth.config.allowed_request_methods = [:post, :get]
-    OmniAuth.config.silence_get_warning = true
     def twitter 
-
+        
         twitter_account = Current.user.twitter_accounts.where(username: auth.info.nickname).first_or_initialize
         twitter_account.update(
             name: auth.info.name,
@@ -11,7 +9,8 @@ class OmniauthCallbacksController < ApplicationController
             token: auth.credentials.token, 
             secret: auth.credentials.secret,
         )
-
+        
+        binding.pry
 
         redirect_to root_path, notice: 'Successfully connected'
     end

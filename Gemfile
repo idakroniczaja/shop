@@ -32,6 +32,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'gravatar_image_tag'
 
+gem 'pry-rails', :group => :development
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

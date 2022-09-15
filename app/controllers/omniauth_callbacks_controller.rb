@@ -9,7 +9,6 @@ class OmniauthCallbacksController < ApplicationController
             secret: auth.credentials.secret,
         )
         
-        binding.pry
 
         redirect_to root_path, notice: 'Successfully connected'
     end
